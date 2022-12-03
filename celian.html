@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head moznomarginboxes mozdisallowselectionprint>
+  <meta charset="UTF-8">
+  <!--  <title>printDemo</title>-->
+
+  <style type="text/css">
+    /*!
+ *
+ * antd v4.8.4
+ *
+ * Copyright 2015-present, Alipay, Inc.
+ * All rights reserved.
+ *
+ */
+    [class*=ant-]::-ms-clear, [class*=ant-] input::-ms-clear, [class*=ant-] input::-ms-reveal, [class^=ant-]::-ms-clear, [class^=ant-] input::-ms-clear, [class^=ant-] input::-ms-reveal {
+      display: none
+    }
+
+    [class*=ant-], [class*=ant-] *, [class*=ant-] :after, [class*=ant-] :before, [class^=ant-], [class^=ant-] *, [class^=ant-] :after, [class^=ant-] :before {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%
+    }
+
+    input::-ms-clear, input::-ms-reveal {
+      display: none
+    }
+
+    *, :after, :before {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    html {
+      font-family: sans-serif;
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -ms-overflow-style: scrollbar;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+
+    @-ms-viewport {
+      width: device-width
+    }
+
+    body {
+      margin: 0;
+      color: rgba(0, 0, 0, .85);
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+      font-variant: tabular-nums;
+      line-height: 1.5715;
+      background-color: #fff;
+      -webkit-font-feature-settings: "tnum";
+      font-feature-settings: "tnum"
+    }
+
+    [tabindex="-1"]:focus {
+      outline: none !important
+    }
+
+
+    .ant-btn {
+      line-height: 1.5715;
+      position: relative;
+      display: inline-block;
+      font-weight: 400;
+      white-space: nowrap;
+      text-align: center;
+      background-image: none;
+      -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, .015);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, .015);
+      cursor: pointer;
+      -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+      transition: all .3s cubic-bezier(.645, .045, .355, 1);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      height: 32px;
+      padding: 4px 15px;
+      font-size: 14px;
+      border-radius: 2px;
+      color: rgba(0, 0, 0, .85);
+      background: #fff;
+      border: 1px solid #d9d9d9
+    }
+
+    .ant-btn > .anticon {
+      line-height: 1
+    }
+
+    .ant-btn, .ant-btn:active, .ant-btn:focus {
+      outline: 0
+    }
+
+    .ant-btn:not([disabled]):hover {
+      text-decoration: none
+    }
+
+    .ant-btn:not([disabled]):active {
+      outline: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none
+    }
+
+    .ant-btn[disabled] {
+      cursor: not-allowed
+    }
+
+    .ant-btn[disabled] > * {
+      pointer-events: none
+    }
+
+    .ant-btn-lg {
+      height: 40px;
+      padding: 6.4px 15px;
+      font-size: 16px;
+      border-radius: 2px
+    }
+
+    .ant-btn-sm {
+      height: 24px;
+      padding: 0 7px;
+      font-size: 14px;
+      border-radius: 2px
+    }
+
+    .ant-btn > a:only-child {
+      color: currentColor
+    }
+
+    .ant-btn > a:only-child:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ""
+    }
+
+    .ant-btn:focus, .ant-btn:hover {
+      color: #40a9ff;
+      background: #fff;
+      border-color: #40a9ff
+    }
+
+    .ant-btn:focus > a:only-child, .ant-btn:hover > a:only-child {
+      color: currentColor
+    }
+
+    .ant-btn:focus > a:only-child:after, .ant-btn:hover > a:only-child:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ""
+    }
+
+    .ant-btn:active {
+      color: #096dd9;
+      background: #fff;
+      border-color: #096dd9
+    }
+
+    .ant-btn:active > a:only-child {
+      color: currentColor
+    }
+
+    .ant-btn:active > a:only-child:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ""
+    }
+
+    .ant-btn[disabled], .ant-btn[disabled]:active, .ant-btn[disabled]:focus, .ant-btn[disabled]:hover {
+      color: rgba(0, 0, 0, .25);
+      background: #f5f5f5;
+      border-color: #d9d9d9;
+      text-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none
+    }
+
+    .ant-btn[disabled]:active > a:only-child, .ant-btn[disabled]:focus > a:only-child, .ant-btn[disabled]:hover > a:only-child, .ant-btn[disabled] > a:only-child {
+      color: currentColor
+    }
+
+    .ant-btn[disabled]:active > a:only-child:after, .ant-btn[disabled]:focus > a:only-child:after, .ant-btn[disabled]:hover > a:only-child:after, .ant-btn[disabled] > a:only-child:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ""
+    }
+
+    .ant-btn:active, .ant-btn:focus, .ant-btn:hover {
+      text-decoration: none;
+      background: #fff
+    }
+
+    .ant-btn > span {
+      display: inline-block
+    }
+
+    .ant-btn-primary {
+      color: #fff;
+      background: #1890ff;
+      border-color: #1890ff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .12);
+      -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, .045);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, .045)
+    }
+
+    .ant-btn-primary > a:only-child {
+      color: currentColor
+    }
+
+    .ant-btn-primary > a:only-child:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ""
+    }
+
+    .ant-btn-primary:focus, .ant-btn-primary:hover {
+      color: #fff;
+      background: #40a9ff;
+      border-color: #40a9ff
+    }
+
+    .ant-btn-primary:focus > a:only-child, .ant-btn-primary:hover > a:only-child {
+      color: currentColor
+    }
+
+    .ant-btn-primary:focus > a:only-child:after, .ant-btn-primary:hover > a:only-child:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ""
+    }
+
+    .ant-btn-primary:active {
+      color: #fff;
+      background: #096dd9;
+      border-color: #096dd9
+    }
+
+    .ant-btn-primary:active > a:only-child {
+      color: currentColor
+    }
+
+    .ant-btn-primary:active > a:only-child:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ""
+    }
+
+    .ant-btn-primary[disabled], .ant-btn-primary[disabled]:active, .ant-btn-primary[disabled]:focus, .ant-btn-primary[disabled]:hover {
+      color: rgba(0, 0, 0, .25);
+      background: #f5f5f5;
+      border-color: #d9d9d9;
+      text-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none
+    }
+
+    .ant-btn-primary[disabled]:active > a:only-child, .ant-btn-primary[disabled]:focus > a:only-child, .ant-btn-primary[disabled]:hover > a:only-child, .ant-btn-primary[disabled] > a:only-child {
+      color: currentColor
+    }
+
+    .ant-btn-primary[disabled]:active > a:only-child:after, .ant-btn-primary[disabled]:focus > a:only-child:after, .ant-btn-primary[disabled]:hover > a:only-child:after, .ant-btn-primary[disabled] > a:only-child:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ""
+    }
+
+  </style>
+
+
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0 auto;
+      min-width: 900px;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    img {
+      display: block;
+      border: none;
+    }
+
+    .content_box {
+      padding: 20px;
+      margin: 0 auto;
+    }
+
+
+    .page_footer {
+      text-align: center;
+    }
+
+    .print_btn {
+      padding-bottom: 20px;
+
+    }
+
+
+  </style>
+
+  <style type="text/css" media="print">
+
+    .page_footer {
+      display: none;
+    }
+
+    .content_box {
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin:1.5cm 1cm;
+    }
+
+  </style>
+
+
+</head>
+<body>
+
+<div class="content_box">
+
+  <div class="content">
+<div style="padding: 10px; font-size: 14px; word-break: break-all;"><div><div style="font-size: 20px; color: rgb(51, 51, 51); text-align: center;">沈丘县第一初级中学假期日常小测验</div><table border="0" cellpadding="0" cellspacing="0" textalign="left" style="margin: 20px auto 0px; table-layout: fixed; word-break: break-all;"><tbody><tr><th style="font-size: 12px; text-align: left; color: rgb(102, 102, 102); font-weight: 400; margin: 0px; padding: 0px 17px 6px; border-right: 1px solid rgb(204, 204, 204); line-height: 8px;">学员</th><th style="font-size: 12px; text-align: left; color: rgb(102, 102, 102); font-weight: 400; margin: 0px; padding: 0px 17px 6px; border-right: 1px solid rgb(204, 204, 204); line-height: 8px;">得分</th><th style="font-size: 12px; text-align: left; color: rgb(102, 102, 102); font-weight: 400; margin: 0px; padding: 0px 17px 6px; border-right: 1px solid rgb(204, 204, 204); line-height: 8px;">总分</th><th style="font-size: 12px; text-align: left; color: rgb(102, 102, 102); font-weight: 400; margin: 0px; padding: 0px 17px 6px; border-right: 1px solid rgb(204, 204, 204); line-height: 8px;">通过分数</th><th style="font-size: 12px; text-align: left; color: rgb(102, 102, 102); font-weight: 400; margin: 0px; padding: 0px 17px 6px; border-right: 1px solid rgb(204, 204, 204); line-height: 8px;">通过状态</th><th style="font-size: 12px; text-align: left; color: rgb(102, 102, 102); font-weight: 400; margin: 0px; padding: 0px 17px 6px; border-right: 1px solid rgb(204, 204, 204); line-height: 8px;">考试用时</th><th style="font-size: 12px; text-align: left; color: rgb(102, 102, 102); font-weight: 400; margin: 0px; padding: 0px 17px 6px; border-right: none; line-height: 8px;">交卷时间</th></tr><tr><td style="font-size: 14px; text-align: left; font-weight: 400; padding: 8px 17px 0px; border-right: 1px solid rgb(204, 204, 204); line-height: 20px; max-width: 200px;">王君豪</td><td style="font-size: 14px; text-align: left; font-weight: 400; padding: 8px 17px 0px; border-right: 1px solid rgb(204, 204, 204); line-height: 20px; max-width: 200px;">61</td><td style="font-size: 14px; text-align: left; font-weight: 400; padding: 8px 17px 0px; border-right: 1px solid rgb(204, 204, 204); line-height: 20px; max-width: 200px;">70</td><td style="font-size: 14px; text-align: left; font-weight: 400; padding: 8px 17px 0px; border-right: 1px solid rgb(204, 204, 204); line-height: 20px; max-width: 200px;">60</td><td style="font-size: 14px; text-align: left; font-weight: 400; padding: 8px 17px 0px; border-right: 1px solid rgb(204, 204, 204); line-height: 20px; max-width: 200px; color: rgb(21, 188, 131);">通过</td><td style="font-size: 14px; text-align: left; font-weight: 400; padding: 8px 17px 0px; border-right: 1px solid rgb(204, 204, 204); line-height: 20px; max-width: 200px;">7分50秒</td><td style="font-size: 14px; text-align: left; font-weight: 400; padding: 8px 17px 0px; border-right: none; line-height: 20px; max-width: 200px;">2022-11-18 15:48:56</td></tr></tbody></table></div><div style="font-size: 40px; line-height: 1; height: 40px;">&nbsp;&nbsp;</div><div><div style="margin-bottom: 10px;"><div style="display: flex; align-items: center; justify-content: space-between; padding-right: 10px;"><div style="display: flex; align-items: center;">1. 【问答题(人工判分)】<div style="font-size: 12px; color: rgb(153, 153, 153);"> 分值：25</div><div style="font-size: 12px; color: rgb(229, 93, 93);">&nbsp;【得分】 21</div></div><div></div></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;"><span>见下方图片</span></div><div style="margin-left: 10px;"><div><table border="0" cellpadding="2" cellspacing="2" style="margin-left: 0px;"><tr><td style="padding: 5px;"><img src="https://ossgw.alicdn.com/tblearn/image/dingtalk_package/20221118/645672549/Image_69c62b37-fae0-4d29-81f6-ef810bcd7cdf.jpeg?x-oss-process=image/resize,h_100,w_100,limit_0" width="100" height="100"></td></tr></table><div style="font-size: 5px; line-height: 1; height: 5px;">&nbsp;&nbsp;</div></div></div></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;">【学员作答】<span><div><table border="0" cellpadding="2" cellspacing="2" style="margin-left: 0px;"><tr><td style="padding: 5px;"><img src="https://ossgw.alicdn.com/tblearn/image/dingtalk_package/20221118/645676812/q1668757500374.jpg?x-oss-process=image/resize,h_100,w_100,limit_0" width="100" height="100"></td></tr></table><div style="font-size: 5px; line-height: 1; height: 5px;">&nbsp;&nbsp;</div></div></span></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;">【批注】 在电压相同时，电流与电阻成正比
+电压的表示符号为大写字母U，不是小写字母</div><div style="font-size: 20px; line-height: 1; height: 20px;">&nbsp;&nbsp;</div></div><div><div style="margin-bottom: 10px;"><div style="display: flex; align-items: center; justify-content: space-between; padding-right: 10px;"><div style="display: flex; align-items: center;">2. 【问答题(人工判分)】<div style="font-size: 12px; color: rgb(153, 153, 153);"> 分值：25</div><div style="font-size: 12px; color: rgb(229, 93, 93);">&nbsp;【得分】 22</div></div><div></div></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;"><span>见下方图片</span></div><div style="margin-left: 10px;"><div><table border="0" cellpadding="2" cellspacing="2" style="margin-left: 0px;"><tr><td style="padding: 5px;"><img src="https://ossgw.alicdn.com/tblearn/image/dingtalk_package/20221118/645672549/Image_5e1697eb-0f74-43c7-9d89-72248e170abc.jpeg?x-oss-process=image/resize,h_100,w_100,limit_0" width="100" height="100"></td></tr></table><div style="font-size: 5px; line-height: 1; height: 5px;">&nbsp;&nbsp;</div></div></div></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;">【学员作答】<span><div><table border="0" cellpadding="2" cellspacing="2" style="margin-left: 0px;"><tr><td style="padding: 5px;"><img src="https://ossgw.alicdn.com/tblearn/image/dingtalk_package/20221118/645676812/q1668757648783.jpg?x-oss-process=image/resize,h_100,w_100,limit_0" width="100" height="100"></td></tr></table><div style="font-size: 5px; line-height: 1; height: 5px;">&nbsp;&nbsp;</div></div></span></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;">【批注】 （3）两端接线柱接反</div><div style="font-size: 20px; line-height: 1; height: 20px;">&nbsp;&nbsp;</div></div><div><div style="margin-bottom: 10px;"><div style="display: flex; align-items: center; justify-content: space-between; padding-right: 10px;"><div style="display: flex; align-items: center;">3. 【问答题(人工判分)】<div style="font-size: 12px; color: rgb(153, 153, 153);"> 分值：20</div><div style="font-size: 12px; color: rgb(229, 93, 93);">&nbsp;【得分】 18</div></div><div></div></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;"><span>下方图片</span></div><div style="margin-left: 10px;"><div><table border="0" cellpadding="2" cellspacing="2" style="margin-left: 0px;"><tr><td style="padding: 5px;"><img src="https://ossgw.alicdn.com/tblearn/image/dingtalk_package/20221118/645672549/Image_8aea0863-2734-452c-a261-bb75a9e9085b.jpeg?x-oss-process=image/resize,h_100,w_100,limit_0" width="100" height="100"></td></tr></table><div style="font-size: 5px; line-height: 1; height: 5px;">&nbsp;&nbsp;</div></div></div></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;">【学员作答】<span><div><table border="0" cellpadding="2" cellspacing="2" style="margin-left: 0px;"><tr><td style="padding: 5px;"><img src="https://ossgw.alicdn.com/tblearn/image/dingtalk_package/20221118/645676812/q1668757730251.jpg?x-oss-process=image/resize,h_100,w_100,limit_0" width="100" height="100"></td></tr></table><div style="font-size: 5px; line-height: 1; height: 5px;">&nbsp;&nbsp;</div></div></span></div><div style="margin: 5px 5px 5px 15px; white-space: pre-wrap;">【批注】 最大组织为20Ω</div><div style="font-size: 20px; line-height: 1; height: 20px;">&nbsp;&nbsp;</div></div></div></div>
+
+
+<div class="page_footer" id="page_footer" >
+  <button type="button" class="ant-btn ant-btn-primary" onclick="window.print()"><span>打印此页面</span></button>
+</div>
+
+</div>
+
+<script type="text/javascript">
+  // contextmenu 禁用右键菜单
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+  //禁止复制  selectstart
+  document.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+  });
+</script>
+
+
+</body>
+</html>
